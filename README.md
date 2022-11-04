@@ -24,3 +24,4 @@ Linux en Windows hebben verschillende time to life op hun icmp pakketen.
 We kijken dus naar de ttl in het antwoordpakket van onze host.
 
 ## 4. PCAP analyse
+In dit deel gaan we het netwekr afscannen naar HTTP verkeer.

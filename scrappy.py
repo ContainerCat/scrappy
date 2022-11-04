@@ -4,9 +4,8 @@ import sys
 import json
 from scapy.layers.l2 import Ether, ARP, srp
 from scapy.layers.inet import IP, sr1, UDP, ICMP, TCP
-from scapy.sendrecv import sr, sniff
+from scapy.sendrecv import sniff
 from scapy.layers.http import HTTPRequest
-from scapy.packet import Raw
 
 class Scrappy:
     def __init__(self, args):
