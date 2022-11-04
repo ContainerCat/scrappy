@@ -1,27 +1,29 @@
 # Scrappy
-scrappy, een tool gebaseerd op de library scapy.
-Deze tool heeft een aantal features:
+scrappy is a tool based on the library "scapy".
+This tool has a few base features:
 
-## 1. discover hosts
-In deze feature gaan we een netwerkrange (bv 192.168.1.1/24) scannen naar levende hosts.
-We kunnen dit op meerdere manieren doen. Het verschil hier is het protocol je gebruikt.
+
+## 1. Discover hosts
+This feature will scan a network range for living hosts.
+This can be done in multiple ways:
 
 - ICMP ping   
-    ! Veel firewalls blokkeren tegenwoordig ICMP pakketten.
+    ! A lot of firewalls block ICMP packets.
 - UDP ping   
-- TCP ping   
-    ! gebruik van zowel syn als ack ping in combinatie.        
+- TCP ping        
 - IP Protocol ping
 - ARP ping
-pingen met het ARP protocol is sneller en meer betrouwbaar dan andere protocollen
+    pinging with the ARP protocol is faster and more reliable than the other protocols
 
-## 2. discover services
-We sturen paketjes naar de verschillende poorten van een host.
-Aan de hand van het antwoord, kunnen we zien of deze poort al dan niet open staat.
+## 2. Discover services
+To discover services running on a host, we will send packages to the different ports.
+Looking at the (lack of) answer, will clarify the status of a port.
+We scan all ports from 1 to 1024.
 
 ## 3. Remote OS detection
-Linux en Windows hebben verschillende time to life op hun icmp pakketen.
-We kijken dus naar de ttl in het antwoordpakket van onze host.
+Linux kernel and Windows have different time to life in their ICMP packets.
+We can extract this from the answer on our sent ICMP packet.
 
 ## 4. PCAP analyse
-In dit deel gaan we het netwekr afscannen naar HTTP verkeer.
+We analyse and scan the network for HTTP trafic.
+You can do this for a particular host and for a network range
