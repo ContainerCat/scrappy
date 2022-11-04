@@ -112,10 +112,11 @@ if __name__ == "__main__":
         description= "A tool based on scapy",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog= textwrap.dedent('''
+
             .'\   /`.
          .'.-.`-'.-.`.
     ..._:   .-. .-.   :_...
-  .'    '-.(o ) (o ).-'    `.     -- lets get scrappy
+  .'    '-.(o ) (o ).-'    `.     -- let's get scrappy
  :  _    _ _`~(_)~`_ _    _  :
 :  /:   ' .-=_   _=-. `   ;\  :
 :   :|-.._  '     `  _..-|:   :
@@ -125,6 +126,14 @@ if __name__ == "__main__":
       `-._   ````    _.-'
           ``-------''
 
+
+examples:
+    "python scrappy.py -t 0.0.0.0/24 -p"    # Analyse the traffic on your network
+    "python scrappy.py -t 0.0.0.0 -o"       # Discover what OS a host is using
+    "python scrappy.py -t 0.0.0.0 -s"       # Perform a portscan on a specific host
+    "python scrappy.py -t 0.0.0.0/24 -d"    # Discover all hosts in your network range
+
+    !if no file is given to write to(-f), default txt "scrrappy" will be used
         '''))
     parser.add_argument("-d", "--discoverhost", action= "store_true", help="search network for alive hosts")
     parser.add_argument("-s", "--service", action= "store_true", help="port scan of a perticular host")
